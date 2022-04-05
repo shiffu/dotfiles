@@ -1,4 +1,3 @@
-
 set incsearch
 
 set tabstop=4
@@ -30,20 +29,15 @@ map <C-l> <C-w>l
 " Auto deletes all trailing whitespaces upon save
 autocmd BufWritePre * %s/\s\+$//e
 
-
-
 "
 " Plugins
 "
 call plug#begin('~/.vim/plugged')
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tomasr/molokai'
-
 call plug#end()
-
 
 
 "
