@@ -1,16 +1,30 @@
+" Leader - ( Spacebar )
+let mapleader = ","
+
+" Set bell off for all events
+set bo=all
+
 set incsearch
+set nocompatible
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
+set smartindent
 set autoindent
+set smarttab
+
+" Automatically write files when changing when multiple files are opened
+set autowrite
 
 set fileformat=unix
 
 set number relativenumber
 
 syntax on
+set ruler
 
 set encoding=utf-8
 
@@ -26,19 +40,24 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Fuzzy files finder
+nmap <leader>l :Files .<CR>
+
 " Auto deletes all trailing whitespaces upon save
 autocmd BufWritePre * %s/\s\+$//e
 
 "
-" Plugins
+" Plugins (only if plugin manager Plug is detected)
 "
-call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tomasr/molokai'
-call plug#end()
 
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+    call plug#begin('~/.vim/plugged')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'tomasr/molokai'
+    call plug#end()
+endif
 
 "
 " COC Config (TODO: Review and remove potential duplicates)
@@ -50,6 +69,7 @@ set hidden
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
+set noswapfile
 
 " Give more space for displaying messages.
 set cmdheight=2
