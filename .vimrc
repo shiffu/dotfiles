@@ -68,6 +68,10 @@ nmap <leader>l :Files .<CR>
 " Auto deletes all trailing whitespaces upon save
 autocmd BufWritePre * %s/\s\+$//e
 
+" Auto create & load buffers views
+autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent loadview
+
 "
 " Plugins (only if plugin manager Plug is detected)
 "
