@@ -16,11 +16,11 @@ set smartindent
 set autoindent
 set smarttab
 
-set autowrite           " Automatically write files when changing when multiple files are opened
-
-set fileformat=unix
+set backspace=indent,eol,start
 
 set number relativenumber
+set autowrite           " Automatically write files when changing when multiple files are opened
+set fileformat=unix
 
 syntax on
 colorscheme molokai
@@ -29,9 +29,6 @@ set ruler                       " Always show the cursor
 set colorcolumn=100             " color column at 100 char
 set encoding=utf-8
 set t_Co=256                    " Support 256 colors
-
-set splitbelow                  " Horizontal splits always on the bottom
-set splitright                  " Vertical splits always on the right
 
 set iskeyword+=-                " Treat dash separated words as a word text obj
 
@@ -62,6 +59,9 @@ noremap <c-v> :vs ~/.vimrc<CR>
 " Toggle Explorer tree on the left
 noremap <leader>e :Lex<CR>
 
+" grep word under cursor
+nnoremap <leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " Fuzzy finder
 nmap <leader>l :Files .<CR>
 
@@ -69,8 +69,20 @@ nmap <leader>l :Files .<CR>
 autocmd BufWritePre * %s/\s\+$//e
 
 " Auto create & load buffers views
-autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent loadview
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ tags
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  "let g:ctrlp_use_caching = 0
+endif
 
 "
 " Plugins (only if plugin manager Plug is detected)
