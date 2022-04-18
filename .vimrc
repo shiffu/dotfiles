@@ -22,15 +22,16 @@ set number relativenumber
 set autowrite           " Automatically write files when changing when multiple files are opened
 set fileformat=unix
 
-syntax on
-colorscheme molokai
-
 set ruler                       " Always show the cursor
+set cursorline                  " Always highlight the line the cursor is on
 set colorcolumn=100             " color column at 100 char
 set encoding=utf-8
 set t_Co=256                    " Support 256 colors
 
 set iskeyword+=-                " Treat dash separated words as a word text obj
+
+syntax on
+colorscheme molokai
 
 " Enable autocompletion ctrl+n to activate:
 set wildmode=longest,list,full
@@ -72,7 +73,7 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-" The Silver Searcher
+" ag: The Silver Searcher
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ tags
@@ -92,6 +93,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     call plug#end()
@@ -117,4 +119,3 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     " Stop showing the mode
     set noshowmode
 endif
-
