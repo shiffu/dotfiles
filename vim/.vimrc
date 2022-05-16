@@ -29,6 +29,7 @@ set encoding=utf-8
 set t_Co=256                    " Support 256 colors
 
 set iskeyword+=-                " Treat dash separated words as a word text obj
+set magic
 
 syntax on
 colorscheme molokai
