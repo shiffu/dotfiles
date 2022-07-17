@@ -6,6 +6,7 @@ set bo=all
 
 set incsearch
 set nocompatible
+set noswapfile
 
 set tabstop=4
 set softtabstop=4
@@ -22,13 +23,13 @@ set number relativenumber
 set autowrite           " Automatically write files when changing when multiple files are opened
 set fileformat=unix
 
-set ruler                       " Always show the cursor
-set cursorline                  " Always highlight the line the cursor is on
-set colorcolumn=100             " color column at 100 char
+set ruler               " Always show the cursor
+set cursorline          " Always highlight the line the cursor is on
+set colorcolumn=100     " color column at 100 char
 set encoding=utf-8
-set t_Co=256                    " Support 256 colors
+set t_Co=256            " Support 256 colors
 
-set iskeyword+=-                " Treat dash separated words as a word text obj
+"set iskeyword+=-       " Treat dash separated words as a word text obj
 set magic
 
 syntax on
@@ -47,7 +48,7 @@ set listchars=tab:→\ ,eol:↲
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
-let g:netrw_winsize = 20
+let g:netrw_winsize = 18
 
 " Simpler split navigation Shortcuts
 map <C-h> <C-w>h
@@ -56,13 +57,17 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Quickly edit .vimrc
-noremap <c-v> :vs ~/.vimrc<CR>
+noremap <leader>v :vs ~/.vimrc<CR>
+
+" Trigger build
+noremap <leader>m :mak!<CR>
 
 " Toggle Explorer tree on the left
 noremap <leader>e :Lex<CR>
 
 " grep word under cursor
-nnoremap <leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap <leader>g :!rg --vimgrep --smart-case "<C-R><C-W>"<CR>
+nnoremap <leader>g :grep! "<C-R><C-W>"<CR>:cw<CR>
 
 " Fuzzy finder
 nmap <leader>l :Files .<CR>
@@ -74,16 +79,10 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-" ag: The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ tags
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  "let g:ctrlp_use_caching = 0
+" Grep prog
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --smart-case
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 "
@@ -95,6 +94,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
+    Plug 'tikhomirov/vim-glsl'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     call plug#end()
