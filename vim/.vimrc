@@ -6,12 +6,13 @@ set bo=all
 
 set incsearch
 set nocompatible
-set noswapfile
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set directory=$HOME/.vim/swp//
+set backupdir=~/.vim/.backup//
 
 set smartindent
 set autoindent
@@ -120,3 +121,4 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     " Stop showing the mode
     set noshowmode
 endif
+
