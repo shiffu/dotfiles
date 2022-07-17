@@ -12,7 +12,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set directory=$HOME/.vim/swp//
-set backupdir=~/.vim/.backup//
+set backupdir=$HOME/.vim/backup//
 
 set smartindent
 set autoindent
