@@ -1,5 +1,5 @@
 # dotfiles
-This config follow the Stow hierarchy
+This config follows the Stow hierarchy
 
 
 ## zsh
