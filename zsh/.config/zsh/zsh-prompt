@@ -1,0 +1,17 @@
+#!/bin/sh
+
+## autoload vcs
+autoload -Uz vcs_info
+
+# enable only git 
+zstyle ':vcs_info:*' enable git 
+
+# setup a hook that runs before every prompt. 
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[yellow]%} %b%{$fg[blue]%})"
+
+PROMPT="%{$fg[white]%}%n%{$fg[cyan]%}@%{$fg[white]%}%m %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT+="\$vcs_info_msg_0_ "

@@ -1,0 +1,38 @@
+#!/bin/sh
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+export EDITOR=vim
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
+export PATH="$HOME/.local/bin":$PATH
+export PATH="$HOME/.pyenv/shims:${PATH}"
+export PATH="$HOME/.local/share/neovim/bin":$PATH
+
+# Make those MacOS Specific?
+openssl_version="3"
+export PATH="/usr/local/opt/openssl@${openssl_version}/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl@${openssl_version}/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@${openssl_version}/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@${openssl_version}/lib/pkgconfig"
+
+# OS Specific Exports
+case "$(uname -s)" in
+Darwin)
+	# echo 'Mac OS X'
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+	;;
+
+Linux)
+	# echo 'Linux'
+	;;
+
+CYGWIN* | MINGW32* | MSYS* | MINGW*)
+	# echo 'MS Windows'
+	;;
+*)
+	# echo 'Other OS'
+	;;
+esac
+

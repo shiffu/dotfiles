@@ -1,0 +1,5 @@
+/nvim/.config/nvim/plugin
+
+zsh/.config/zsh/.zsh_history
+zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/completion/_fnm

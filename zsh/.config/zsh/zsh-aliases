@@ -1,0 +1,48 @@
+#!/bin/sh
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+
+alias vi='vim'
+alias nv='nvim'
+
+alias ll='ls -al'
+
+alias ssha='~/utils/ssha.sh $@'
+alias sshb='~/utils/sshb.sh $@'
+
+alias os='openstack --insecure'
+
+alias t='task'
+alias tp='TASKDATA=/Users/jpennel/MySynologyDrive/taskwarrior task'
+
+alias lg='lazygit'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# get top process eating memory / cpu
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'
+
+# OS Specific Aliases
+case "$(uname -s)" in
+Darwin)
+	# echo 'Mac OS X'
+	;;
+
+Linux)
+	# echo 'Linux'
+	;;
+
+CYGWIN* | MINGW32* | MSYS* | MINGW*)
+	# echo 'MS Windows'
+	;;
+*)
+	# echo 'Other OS'
+	;;
+esac
