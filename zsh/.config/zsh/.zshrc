@@ -30,9 +30,9 @@ source "$ZDOTDIR/zsh-functions"
 
 # Normal files to source
 zsh_source_file "zsh-exports"
-zsh_source_file "zsh-vim-mode"
 zsh_source_file "zsh-aliases"
 zsh_source_file "zsh-prompt"
+zsh_source_file "zsh-vim-mode"
 
 # Plugins
 zsh_import_plugin "zsh-users/zsh-autosuggestions"
@@ -50,7 +50,7 @@ bindkey "^n" down-line-or-beginning-search # Down
 # FZF 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
+# [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
