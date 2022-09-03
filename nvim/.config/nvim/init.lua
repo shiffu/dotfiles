@@ -17,3 +17,4 @@ require "jcp.alpha"
 require "jcp.whichkey"
 require "jcp.autocommands"
 require("jcp.gitsigns")
+require("jcp.toggleterm")
