@@ -6,3 +6,4 @@ zsh/.config/zsh/completion/_fnm
 vim/.vim/plugged
 vim/.vim/view
 vim/.vim/.netrwhist
+zsh/.config/zsh/plugins
