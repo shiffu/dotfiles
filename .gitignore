@@ -3,3 +3,6 @@
 zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/completion/_fnm
+vim/.vim/plugged
+vim/.vim/view
+vim/.vim/.netrwhist
