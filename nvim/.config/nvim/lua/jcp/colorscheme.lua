@@ -49,7 +49,7 @@ require('material').setup({
 		trouble = false,
 		nvim_cmp = true,
 		neogit = false,
-		gitsigns = false,
+		gitsigns = true,
 		git_gutter = false,
 		telescope = true,
 		nvim_tree = true,
