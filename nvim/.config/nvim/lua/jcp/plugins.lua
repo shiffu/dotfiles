@@ -44,14 +44,14 @@ return packer.startup(function(use)
     -- Plugins start here
 	use({"wbthomason/packer.nvim"})
 	use({"nvim-lua/plenary.nvim"})
+	use({"lewis6991/impatient.nvim"})
 	use({"windwp/nvim-autopairs"})
 	use({"numToStr/Comment.nvim"})
 	use({"kyazdani42/nvim-web-devicons"})
 	use({"kyazdani42/nvim-tree.lua"})
-	use({"akinsho/bufferline.nvim"})
+	use({"akinsho/bufferline.nvim", requires = 'nvim-tree/nvim-web-devicons'})
 	use({"moll/vim-bbye"})
 	use({"nvim-lualine/lualine.nvim"})
-	use({"lewis6991/impatient.nvim"})
 	use({"lukas-reineke/indent-blankline.nvim"})
 	use({"goolord/alpha-nvim"})
 	use("folke/which-key.nvim")
@@ -68,6 +68,9 @@ return packer.startup(function(use)
 
     -- GitSigns
     use("lewis6991/gitsigns.nvim")
+
+    -- Mason
+    use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
 
 	-- LSP
 	use({"neovim/nvim-lspconfig"})
