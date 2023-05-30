@@ -86,6 +86,9 @@ return packer.startup(function(use)
     -- Terminal
     use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
+    -- F5 TCL Language support
+    use {'lewis6991/tree-sitter-tcl', run = 'make' }
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
