@@ -32,7 +32,7 @@ local options = {
   numberwidth = 4,                         -- set number column width to 4 {default 4}
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = true,                             -- wrap lines ?
-  -- scrolloff = 8,                           -- keep 9 lines of buffer on top/bottom while scrolling
+  scrolloff = 8,                           -- keep 9 lines of buffer on top/bottom while scrolling
   sidescrolloff = 8,
   -- guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
