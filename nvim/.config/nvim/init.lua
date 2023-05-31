@@ -19,7 +19,3 @@ require("jcp.alpha")
 require("jcp.whichkey")
 require("jcp.toggleterm")
 require("jcp.autocommands")
-
--- Activate Treesitter Folding method
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

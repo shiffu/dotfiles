@@ -94,6 +94,7 @@ local mappings = {
     "Find files",
   },
   ["g"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  ["G"] = { "<cmd>Telescope grep_string<cr>", "Find Text under cursor" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   p = {
