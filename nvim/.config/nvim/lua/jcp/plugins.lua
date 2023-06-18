@@ -59,7 +59,7 @@ return packer.startup(function(use)
 	-- Colorschemes
     use 'marko-cerovac/material.nvim'
 
-	-- Completiong plugins
+	-- Completion plugins
 	use({"hrsh7th/nvim-cmp"})
 	use({"hrsh7th/cmp-buffer"})
 	use({"hrsh7th/cmp-path"})
@@ -85,6 +85,8 @@ return packer.startup(function(use)
     
     -- Terminal
     use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+
+    use { "vimwiki/vimwiki" }
 
     -- F5 TCL Language support
     -- use {'lewis6991/tree-sitter-tcl', run = 'make' }
