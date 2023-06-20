@@ -86,7 +86,9 @@ return packer.startup(function(use)
     -- Terminal
     use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
+    -- Vimwiki and related plugins
     use { "vimwiki/vimwiki" }
+    use { "iaamp/vimwiki-screenshot" }
 
     -- F5 TCL Language support
     -- use {'lewis6991/tree-sitter-tcl', run = 'make' }
