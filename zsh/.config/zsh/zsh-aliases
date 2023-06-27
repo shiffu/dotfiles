@@ -15,7 +15,7 @@ alias os='openstack --insecure'
 alias t='task'
 alias in='task +in add'
 alias someday='task -in +someday'
-alias tp='TASKDATA=/Users/jpennel/MySynologyDrive/taskwarrior task'
+alias tp='TASKDATA=~/.task_perso task'
 
 alias lg='lazygit'
 
