@@ -13,7 +13,7 @@ alias os='openstack --insecure'
 
 # Task Warrior Aliases
 alias t='task'
-alias in='task +in'
+alias in='task +in add'
 alias someday='task -in +someday'
 alias tp='TASKDATA=/Users/jpennel/MySynologyDrive/taskwarrior task'
 
