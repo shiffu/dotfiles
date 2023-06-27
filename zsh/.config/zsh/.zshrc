@@ -59,3 +59,5 @@ bindkey '^e' edit-command-line
 
 # Environment variables set everywhere
 export EDITOR="nvim"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
