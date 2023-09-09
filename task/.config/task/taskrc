@@ -45,21 +45,26 @@ report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,s
 # report.next.context=1
 # report.next.description=Most urgent tasks
 # report.next.filter=status:pending -someday -WAITING limit:page
-report.next.filter=status:pending -in -someday -WAITING limit:page
+report.next.filter=status:pending -in -someday limit:page
 # report.next.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
 report.next.sort=urgency-
+
+report.today.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,urgency
+report.today.filter=status:pending -in -someday (due.by:today or +next) limit:page
+report.today.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+report.today.sort=urgency-
 
 report.in.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,urgency
 report.in.context=1
 report.in.description=Tasks in Inbox
-report.in.filter=status:pending +in -WAITING limit:page
+report.in.filter=status:pending +in -someday -WAITING limit:page
 report.in.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
 report.in.sort=urgency-
 
 report.someday.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,urgency
 report.someday.context=1
 report.someday.description=Tasks to do Someday/Maybe
-report.someday.filter=tags:someday -WAITING limit:page
+report.someday.filter= +someday -WAITING limit:page
 report.someday.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
 report.someday.sort=urgency-
 
@@ -68,9 +73,13 @@ news.version=2.6.0
 uda.priority.values=H,M,,L
 urgency.uda.priority.L.coefficient=-1.0
 
+# UDAs
+uda.todoist_tid.type=string
+uda.todoist_tid.label=TodoistId
+
 # Context setting
 context.work.read=+work
 context.work.write=+work
-context=perso
 context.perso.read=+perso
 context.perso.write=+perso
+context=work

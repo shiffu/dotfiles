@@ -47,6 +47,9 @@ compinit
 bindkey "^p" up-line-or-beginning-search # Up
 bindkey "^n" down-line-or-beginning-search # Down
 
+# Vault (enc variables containing secrets)
+[ -f ~/.vault ] && source ~/.vault
+
 # FZF 
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh

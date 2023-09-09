@@ -1,0 +1,14 @@
+[general]
+taskrc=~/.config/task/taskrc
+targets=my_trello_tasks
+
+[my_trello_tasks]
+service = trello
+trello.api_key = 8629d527cdd080566f0ed29b14eb3196
+trello.token = ATTAc6d91e4c42181a3e4e4770f108e1a96615efd48d1b91a8620b9a18e68873e16b079CB91F
+trello.include_boards = zhCBi50M
+trello.include_lists = Inbox
+trello.import_labels_as_tags = true
+trello.add_tags = +perso,+in
+trello.static_fields = priority,project
+trello.description_template = {{trellocard}}

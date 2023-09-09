@@ -11,6 +11,9 @@ alias sshb='~/utils/sshb.sh $@'
 
 alias os='openstack --insecure'
 
+# Bugwarrior
+alias bz-pull='cd /usr/local/Cellar/task/2.6.2_1/share/doc/task/rc; bugwarrior-pull; cd -'
+
 # Task Warrior Aliases
 alias t='task'
 alias in='task +in add'
@@ -18,6 +21,8 @@ alias someday='task -in +someday'
 alias tp='TASKDATA=~/.task_perso task'
 
 alias lg='lazygit'
+
+alias tm='tmux'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
