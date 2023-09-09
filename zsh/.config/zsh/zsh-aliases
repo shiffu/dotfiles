@@ -19,6 +19,9 @@ alias tp='TASKDATA=~/.task_perso task'
 
 alias lg='lazygit'
 
+# tmux alias(es)
+alias tm='tmux'
+
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
