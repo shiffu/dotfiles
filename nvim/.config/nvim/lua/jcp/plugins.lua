@@ -48,13 +48,16 @@ return packer.startup(function(use)
 	use({"windwp/nvim-autopairs"})
 	use({"numToStr/Comment.nvim"})
 	use({"kyazdani42/nvim-web-devicons"})
-	use({"kyazdani42/nvim-tree.lua"})
+	-- use({"kyazdani42/nvim-tree.lua"})
+	use({"nvim-tree/nvim-tree.lua"})
 	use({"akinsho/bufferline.nvim", requires = 'nvim-tree/nvim-web-devicons'})
 	use({"moll/vim-bbye"})
 	use({"nvim-lualine/lualine.nvim"})
 	use({"lukas-reineke/indent-blankline.nvim"})
 	use({"goolord/alpha-nvim"})
 	use("folke/which-key.nvim")
+
+	use("christoomey/vim-tmux-navigator")
 
 	-- Colorschemes
     use 'marko-cerovac/material.nvim'
@@ -73,8 +76,8 @@ return packer.startup(function(use)
     use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
 
 	-- LSP
-	use({"neovim/nvim-lspconfig"})
-	use({"williamboman/nvim-lsp-installer"})
+	-- use({"neovim/nvim-lspconfig"})
+	-- use({"williamboman/nvim-lsp-installer"})
 	-- use({"jose-elias-alvarez/null-ls.nvim"})
 
 	-- Telescope
