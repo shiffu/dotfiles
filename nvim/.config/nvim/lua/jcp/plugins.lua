@@ -48,7 +48,6 @@ return packer.startup(function(use)
 	use({"windwp/nvim-autopairs"})
 	use({"numToStr/Comment.nvim"})
 	use({"kyazdani42/nvim-web-devicons"})
-	-- use({"kyazdani42/nvim-tree.lua"})
 	use({"nvim-tree/nvim-tree.lua"})
 	use({"akinsho/bufferline.nvim", requires = 'nvim-tree/nvim-web-devicons'})
 	use({"moll/vim-bbye"})
@@ -57,6 +56,7 @@ return packer.startup(function(use)
 	use({"goolord/alpha-nvim"})
 	use("folke/which-key.nvim")
 
+    -- Tmux Navigation intergration with nvim
 	use("christoomey/vim-tmux-navigator")
 
 	-- Colorschemes
