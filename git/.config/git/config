@@ -1,0 +1,12 @@
+[user]
+	email = jcpennel@gmail.com
+	name = JC Pennel
+[init]
+	defaultBranch = master
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+[creadential]
+	helper = cache
