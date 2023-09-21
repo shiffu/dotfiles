@@ -52,7 +52,7 @@ return packer.startup(function(use)
 	use({"akinsho/bufferline.nvim", requires = 'nvim-tree/nvim-web-devicons'})
 	use({"moll/vim-bbye"})
 	use({"nvim-lualine/lualine.nvim"})
-	use({"lukas-reineke/indent-blankline.nvim"})
+	-- use({"lukas-reineke/indent-blankline.nvim"})
 	use({"goolord/alpha-nvim"})
 	use("folke/which-key.nvim")
 
