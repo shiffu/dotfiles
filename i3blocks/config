@@ -1,0 +1,49 @@
+# Guess the weather hourly
+
+# Packages to be updated
+[package_upgrade]
+#full_text="�
+command=echo " `pacman -Qu|wc -l` (`yay -Qu|wc -l`)"
+interval=600
+color=#5c93ab
+separator_block_width=23
+
+# CPU Load
+[load_average]
+command=echo " `uptime | awk -F ',' '{print $3}' | awk '{print $3}'`"
+interval=30
+color=#fc8e49
+separator_block_width=23
+
+# Weather
+[weather]
+command=curl -Ss 'https://wttr.in/Newton?m&format="%c%t(%f)"' | xargs echo
+interval=3600
+color=#A4C2F4
+separator_block_width=23
+
+# Update time every 5 seconds
+[time]
+command=echo " `date '+%a, %b %d %R'`"
+interval=60
+color=#a7c9db
+separator_block_width=23
+
+# Shutdown / Logout menu
+[shutdown_menu]
+full_text=
+command=shutdown_menu/shutdown_menu.sh
+FG_COLOR=#bbbbbb
+BG_COLOR=#0000ff
+HLFG_COLOR=#111111
+HLBG_COLOR=#bbbbbb
+# #BORDER_COLOR=#222222
+#ROFI_TEXT=Menu:
+ROFI_OPTIONS=-width 11 -location 3 -hide-scrollbar -bw 2
+# #ZENITY_TITLE=Menu
+# #ZENITY_TEXT=Action:
+# #ZENITY_OPTIONS=--column= --hide-header
+# #ENABLE_CONFIRMATIONS=true (must be true or false)
+LAUNCHER=rofi
+LOCKSCRIPT=i3lock --color=${BG_COLOR#"#"}
+separator_block_width=23
