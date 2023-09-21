@@ -208,4 +208,4 @@ assign [class="Spotify"] $ws10
 
 # Execute some programs
 exec picom -f --vsync --backend glx
-exec_always feh --bg-scale /home/jcpennel/wallpapers/arch1.jpg
+exec_always feh --bg-scale $HOME/wallpapers/arch1.jpg
