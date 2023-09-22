@@ -9,7 +9,7 @@
 	co = checkout
 	br = branch
 [credential]
-	helper = cache
+	helper = cache --timeout=7200
 [merge]
 	tool = ext_merge
 [mergetool "ext_merge"]
