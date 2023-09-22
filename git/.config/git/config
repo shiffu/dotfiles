@@ -10,3 +10,9 @@
 	br = branch
 [creadential]
 	helper = cache
+[merge]
+	tool = ext_merge
+[mergetool "ext_merge"]
+	cmd = ext_merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[diff]
+	external = ext_diff
