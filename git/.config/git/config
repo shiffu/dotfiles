@@ -8,7 +8,7 @@
 	ci = commit
 	co = checkout
 	br = branch
-[creadential]
+[credential]
 	helper = cache
 [merge]
 	tool = ext_merge

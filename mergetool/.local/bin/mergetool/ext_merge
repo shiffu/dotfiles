@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/bin/p4v $*
+/usr/bin/p4merge $*
