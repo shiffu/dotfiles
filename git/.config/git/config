@@ -16,3 +16,5 @@
 	cmd = ext_merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [diff]
 	external = ext_diff
+[pull]
+	ff = only
