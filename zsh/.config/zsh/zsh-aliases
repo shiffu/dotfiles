@@ -4,6 +4,7 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 alias vi='vim'
 alias nv='nvim'
 
+alias ls='ls --color'
 alias ll='ls -al'
 
 alias ssha='~/utils/ssha.sh $@'
