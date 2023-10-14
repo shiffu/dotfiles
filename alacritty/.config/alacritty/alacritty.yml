@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.8
+  opacity: 0.85
 
   # Startup Mode (changes require restart)
   #
@@ -446,6 +446,7 @@ font:
 
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
+window.option_as_alt: true
 
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
@@ -848,6 +849,8 @@ key_bindings:
   #- { key: C,              mods: Command, mode: Vi|~Search,  action: ClearSelection        }
   #- { key: H,              mods: Command,                    action: Hide                  }
   #- { key: H,              mods: Command|Alt,                action: HideOtherApplications }
+  - { key: H,              mods: Option,                         action: None }
+  - { key: L,              mods: Option,                         action: None }
   #- { key: M,              mods: Command,                    action: Minimize              }
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }

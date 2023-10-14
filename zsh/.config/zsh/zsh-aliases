@@ -20,6 +20,7 @@ alias t='task'
 alias in='task +in add'
 alias someday='task -in +someday'
 alias tp='TASKDATA=~/.task_perso task'
+alias tui='taskwarrior-tui'
 
 alias lg='lazygit'
 
