@@ -92,6 +92,7 @@ return packer.startup(function(use)
     -- Vimwiki and related plugins
     use { "vimwiki/vimwiki" }
     use { "iaamp/vimwiki-screenshot" }
+    use { "plasticboy/vim-markdown" }
 
     -- F5 TCL Language support
     -- use {'lewis6991/tree-sitter-tcl', run = 'make' }
