@@ -209,3 +209,4 @@ assign [class="Spotify"] $ws10
 # Execute some programs
 exec picom -f --vsync --backend glx
 exec_always feh --bg-scale --randomize $HOME/wallpapers/*
+exec_always --no-startup-id $HOME/.config/polybar/polybar_launch.sh
