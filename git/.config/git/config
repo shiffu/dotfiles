@@ -10,11 +10,11 @@
 	br = branch
 [credential]
 	helper = cache --timeout=7200
-[merge]
-	tool = ext_merge
-[mergetool "ext_merge"]
-	cmd = ext_merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-[diff]
-	external = ext_diff
+; [merge]
+; 	tool = ext_merge
+; [mergetool "ext_merge"]
+; 	cmd = ext_merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+; [diff]
+; 	external = ext_diff
 [pull]
 	ff = only
