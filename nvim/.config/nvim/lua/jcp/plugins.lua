@@ -94,6 +94,7 @@ return packer.startup(function(use)
     use { "vimwiki/vimwiki" }
     use { "iaamp/vimwiki-screenshot" }
     use { "plasticboy/vim-markdown" }
+    use { "junegunn/goyo.vim" }
 
     -- F5 TCL Language support
     -- use {'lewis6991/tree-sitter-tcl', run = 'make' }
