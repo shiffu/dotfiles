@@ -23,7 +23,7 @@ alias tui='taskwarrior-tui'
 
 # Git related
 alias lg='lazygit'
-alias gg-'git-graph'
+alias gg='git-graph'
 
 # tmux alias(es)
 alias tm='tmux'
