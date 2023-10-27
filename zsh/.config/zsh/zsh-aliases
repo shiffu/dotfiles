@@ -19,10 +19,11 @@ alias bz-pull='cd /usr/local/Cellar/task/2.6.2_1/share/doc/task/rc; bugwarrior-p
 alias t='task'
 alias in='task +in add'
 alias someday='task -in +someday'
-alias tp='TASKDATA=~/.task_perso task'
 alias tui='taskwarrior-tui'
 
+# Git related
 alias lg='lazygit'
+alias gg-'git-graph'
 
 # tmux alias(es)
 alias tm='tmux'
