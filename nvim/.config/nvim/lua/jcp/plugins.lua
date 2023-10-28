@@ -63,6 +63,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
     use 'marko-cerovac/material.nvim'
+    use 'ellisonleao/gruvbox.nvim'
 
 	-- Completion plugins
 	use({"hrsh7th/nvim-cmp"})
