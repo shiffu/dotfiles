@@ -1,0 +1,44 @@
+[global]
+    monitor = 0
+    follow = none
+    origin = top-right
+    width = 310
+    height = 350
+    offset = 0x29
+    padding = 3
+    horizontal_padding = 2
+    transparency = 30
+    font = Hack Nerd Font 10
+    format = "<b>%s</b>\n%b"
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+
+    icon_theme = Papirus
+    enable_recursive_icon_lookup = true
+    icon_corner_radius = 0
+
+[urgency_low]
+    background = "#a89984"
+    foreground = "#ebdbb2"
+    frame_color = "#ebdbb2"
+    default_icon = /usr/share/icons/Papirus-Dark/16x16/emblems/emblem-information.svg
+    timeout = 3
+
+[urgency_normal]
+    background = "#458588"
+    foreground = "#ebdbb2"
+    frame_color = "#83a598"
+    default_icon = /usr/share/icons/Papirus-Dark/16x16/emblems/emblem-information.svg
+    timeout = 5
+
+[urgency_critical]
+    background = "#b16286"
+    foreground = "#ebdbb2"
+    frame_color = "#d3869b"
+    default_icon = /usr/share/icons/Papirus-Dark/16x16/emblems/emblem-rabbitvcs-modified.svg
+    timeout = 10
