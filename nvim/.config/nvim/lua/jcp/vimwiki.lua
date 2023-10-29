@@ -9,5 +9,4 @@ let g:vimwiki_global_ext = 0
 
 " Not sure this one is actually necessary
 let g:vimwiki_ext2syntax = {'.md': 'markdown'}
-
 ]])
