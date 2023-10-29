@@ -211,5 +211,6 @@ assign [class="Spotify"] $ws5
 
 # Execute some programs
 exec picom --config ~/.config/picom/picom.conf
+exec eval $(ssh-agent)
 exec_always feh --bg-fill --randomize $HOME/wallpapers/*
 exec_always --no-startup-id $HOME/.config/polybar/polybor_launch.sh
