@@ -138,12 +138,12 @@ set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3"
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5: "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: "
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -194,6 +194,7 @@ bindsym $mod+shift+x exec i3lock -e -c 111625
 
 # Shutdown / Logout menu
 # bindsym $mod+ctrl+Delete exec /home/jcpennel/.config/i3blocks/scripts/shutdown_menu/shutdown_menu.sh
+bindsym $mod+ctrl+Delete exec "rofi -show p -modi p:$HOME/.local/bin/rofi-power-menu -theme-str 'window {width: 12em;} listview {lines: 4;}'"
 
 # Shortcuts for favorite applications
 bindsym $mod+c exec chromium
@@ -206,7 +207,7 @@ for_window [class="gnome-calculator"] floating enable
 
 # Assign applications to specific Workspaces
 assign [class="Chromium"] $ws3
-assign [class="Spotify"] $ws10
+assign [class="Spotify"] $ws5
 
 # Execute some programs
 exec picom --config ~/.config/picom/picom.conf
