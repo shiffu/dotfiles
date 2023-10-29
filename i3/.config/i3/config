@@ -197,7 +197,7 @@ bindsym $mod+shift+x exec i3lock -e -c 111625
 bindsym $mod+ctrl+Delete exec "rofi -show p -modi p:$HOME/.local/bin/rofi-power-menu -theme-str 'window {width: 12em;} listview {lines: 4;}'"
 
 # Rofi Calculator
-bindsym $mod+c exec "rofi -modi calc -show calc"
+bindsym $mod+ctrl+c exec "rofi -modi calc -show calc"
 
 # Shortcuts for favorite applications
 bindsym $mod+c exec chromium
@@ -216,4 +216,4 @@ assign [class="Spotify"] $ws5
 exec picom --config ~/.config/picom/picom.conf
 exec eval $(ssh-agent)
 exec_always feh --bg-fill --randomize $HOME/wallpapers/*
-exec_always --no-startup-id $HOME/.config/polybar/polybor_launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/polybar_launch.sh
