@@ -4,11 +4,15 @@
 zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/completion/_fnm
+zsh/.config/zsh/plugins
+
 vim/.vim/plugged
 vim/.vim/view
 vim/.vim/.netrwhist
-zsh/.config/zsh/plugins
 
 **/tmux/plugins
 
 lazygit/**/state.yml
+
+/scripts/.local/share
+/scripts/.local/state
