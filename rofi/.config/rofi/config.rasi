@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,run,drun";
+	modi: "window,run,drun,rofi-power-menu";
 /*	eh: 2;*/
 /*	font: "mono 12";*/
 /*	location: 0;*/
@@ -147,4 +147,4 @@ configuration {
   }
 }
 
-@theme "./themes/nord.rasi"
+@theme "./themes/rounded-purple-dark.rasi"
