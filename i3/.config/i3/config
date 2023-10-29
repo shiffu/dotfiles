@@ -196,6 +196,9 @@ bindsym $mod+shift+x exec i3lock -e -c 111625
 # bindsym $mod+ctrl+Delete exec /home/jcpennel/.config/i3blocks/scripts/shutdown_menu/shutdown_menu.sh
 bindsym $mod+ctrl+Delete exec "rofi -show p -modi p:$HOME/.local/bin/rofi-power-menu -theme-str 'window {width: 12em;} listview {lines: 4;}'"
 
+# Rofi Calculator
+bindsym $mod+c exec "rofi -modi calc -show calc"
+
 # Shortcuts for favorite applications
 bindsym $mod+c exec chromium
 bindsym $mod+b exec brave
