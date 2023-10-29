@@ -96,6 +96,7 @@ return packer.startup(function(use)
     use { "vimwiki/vimwiki" }
     use { "iaamp/vimwiki-screenshot" }
     use { "plasticboy/vim-markdown" }
+    use { "tools-life/taskwiki" }
     use { "junegunn/goyo.vim" }
 
     -- F5 TCL Language support
