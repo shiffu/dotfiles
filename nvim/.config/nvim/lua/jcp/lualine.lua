@@ -70,11 +70,14 @@ lualine.setup({
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
+
 	},
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { 'mode' },
-		lualine_c = { 'filename' },
+		lualine_c = { { 'filename', path = 2 } },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, 'spaces', 'encoding', 'filetype' },
 		lualine_y = { 'location' },

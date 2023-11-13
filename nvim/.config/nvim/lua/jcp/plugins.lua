@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use({"wbthomason/packer.nvim"})
 	use({"nvim-lua/plenary.nvim"})
 	use({"lewis6991/impatient.nvim"})
-	use({"windwp/nvim-autopairs"})
+	-- use({"windwp/nvim-autopairs"})
 	use({"tpope/vim-surround"})
 	use({"numToStr/Comment.nvim"})
 	use({"kyazdani42/nvim-web-devicons"})
@@ -62,7 +62,7 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- Colorschemes
-    use 'marko-cerovac/material.nvim'
+    -- use 'marko-cerovac/material.nvim'
     use 'ellisonleao/gruvbox.nvim'
 
 	-- Completion plugins
@@ -76,7 +76,7 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim")
 
     -- Mason
-    use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
+    -- use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
 
 	-- LSP
 	-- use({"neovim/nvim-lspconfig"})
@@ -90,12 +90,14 @@ return packer.startup(function(use)
 	use("nvim-treesitter/nvim-treesitter")
     
     -- Terminal
-    use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+    -- use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
     -- Vimwiki and related plugins
     use { "vimwiki/vimwiki" }
     use { "iaamp/vimwiki-screenshot" }
     use { "plasticboy/vim-markdown" }
+    -- use { "tools-life/taskwiki" }
+    -- use { "shiffu/taskwiki" }
     use { "junegunn/goyo.vim" }
 
     -- F5 TCL Language support
