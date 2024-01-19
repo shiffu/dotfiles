@@ -13,7 +13,8 @@ export MANWIDTH=999
 export TASKRC="~/.config/task/taskrc"
 
 export PATH="$HOME/.local/bin":$PATH
-export PATH="$HOME/.local/bin/mergetool":$PATH
+export PATH="$HOME/.local/bin":$PATH
+export PATH="$HOME/go/bin":$PATH
 export PATH="$HOME/.pyenv/shims:${PATH}"
 export PATH="$HOME/.local/share/neovim/bin":$PATH
 export PATH="/usr/local/texlive/2023/bin/x86_64-linux":$PATH
