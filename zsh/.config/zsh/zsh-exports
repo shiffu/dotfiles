@@ -12,6 +12,7 @@ export MANWIDTH=999
 # Task Warrior
 export TASKRC="~/.config/task/taskrc"
 
+export PATH="/usr/local/go/bin":$PATH
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/.local/bin":$PATH
 export PATH="$HOME/go/bin":$PATH
