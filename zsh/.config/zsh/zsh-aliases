@@ -11,7 +11,11 @@ alias ssha='~/utils/ssha.sh $@'
 alias sshb='~/utils/sshb.sh $@'
 
 alias os='openstack --insecure'
-alias kc='kubectl'
+
+# Kube aliases
+alias k='kubectl'
+alias kc='kubectx'
+alias kn='kubens'
 
 # Bugwarrior
 alias bz-pull='cd /usr/local/Cellar/task/2.6.2_1/share/doc/task/rc; bugwarrior-pull; cd -'
