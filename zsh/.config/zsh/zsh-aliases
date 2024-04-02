@@ -2,10 +2,11 @@
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 alias vi='vim'
-alias nv='nvim'
+alias v='nvim'
 
 alias ls='ls --color'
-alias ll='ls -al'
+alias ll='ls -l'
+alias la='ls -al'
 
 alias ssha='~/utils/ssha.sh $@'
 alias sshb='~/utils/sshb.sh $@'
@@ -31,7 +32,7 @@ alias lg='lazygit'
 alias gg='git-graph'
 
 # tmux alias(es)
-alias tm='tmux'
+alias t='tmux'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'

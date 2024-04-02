@@ -17,9 +17,6 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
 
-# kubectl autocomple
-source <(kubectl completion zsh)
-
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -41,10 +38,11 @@ zsh_source_file "zsh-vim-mode"
 zsh_import_plugin "zsh-users/zsh-autosuggestions"
 zsh_import_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_import_plugin "hlissner/zsh-autopair"
-# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# More completions https://github.com/zsh-users/zsh-completions
 
 compinit
+
+# kubectl autocomple
+source <(kubectl completion zsh)
 
 # Key-bindings
 bindkey "^p" up-line-or-beginning-search # Up
@@ -53,12 +51,6 @@ bindkey "^n" down-line-or-beginning-search # Down
 # Vault (enc variables containing secrets)
 [ -f ~/.vault ] && source ~/.vault
 
-# FZF 
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-
-# [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
@@ -66,4 +58,13 @@ bindkey '^e' edit-command-line
 # Environment variables set everywhere
 export EDITOR="nvim"
 
+# External tools completion scripts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.local/helm/completion.zsh ] && source ~/.local/helm/completion.zsh
+
+# FZF 
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+
+[ -f ~/.local/bin/kube-ps1.sh ] && source ~/.local/bin/kube-ps1.sh && PROMPT='$(kube_ps1)'$PROMPT
+
