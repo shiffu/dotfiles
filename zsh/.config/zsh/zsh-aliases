@@ -47,13 +47,6 @@ alias free='free -m' # show sizes in MB
 alias psmem='ps auxf | sort -nr -k 4 | head -5'
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-if [ ! -z $(which batcat) ]; then
-    alias bat='batcat'
-fi
-
-if [ ! -z $b ]; then
-    alias bat='batcat'
-fi
 # OS Specific Aliases
 case "$(uname -s)" in
 Darwin)
