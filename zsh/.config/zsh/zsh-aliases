@@ -54,7 +54,11 @@ Darwin)
 	;;
 
 Linux)
-	# echo 'Linux'
+	echo 'Linux'
+    cmd=$(which batcat)
+    if [ $(echo $?) -eq 0 ]; then
+        alias bat='batcat'
+    fi
 	;;
 
 CYGWIN* | MINGW32* | MSYS* | MINGW*)
