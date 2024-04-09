@@ -76,12 +76,12 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim")
 
     -- Mason
-    -- use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
+    use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
 
 	-- LSP
-	-- use({"neovim/nvim-lspconfig"})
-	-- use({"williamboman/nvim-lsp-installer"})
-	-- use({"jose-elias-alvarez/null-ls.nvim"})
+	use({"neovim/nvim-lspconfig"})
+	use({"williamboman/nvim-lsp-installer"})
+	use({"jose-elias-alvarez/null-ls.nvim"})
 
 	-- Telescope
 	use({"nvim-telescope/telescope.nvim"})
