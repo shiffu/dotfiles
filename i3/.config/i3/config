@@ -207,6 +207,8 @@ bindsym $mod+b exec brave
 for_window [class="KeePassXC"] floating enable
 for_window [class="Pacman"] floating enable
 for_window [class="gnome-calculator"] floating enable
+for_window [class="lutris"] floating enable
+for_window [class="battle.net.exe"] floating enable
 
 # Assign applications to specific Workspaces
 assign [class="Chromium"] $ws3
@@ -217,3 +219,4 @@ exec picom --config ~/.config/picom/picom.conf
 exec eval $(ssh-agent)
 exec_always feh --bg-fill --randomize $HOME/wallpapers/*
 exec_always --no-startup-id $HOME/.config/polybar/polybar_launch.sh
+exec_always $HOME/.SynologyDrive/SynologyDrive.app/bin/cloud-drive-ui
