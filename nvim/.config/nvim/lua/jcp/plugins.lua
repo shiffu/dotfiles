@@ -45,7 +45,6 @@ return packer.startup(function(use)
 	use({"wbthomason/packer.nvim"})
 	use({"nvim-lua/plenary.nvim"})
 	use({"lewis6991/impatient.nvim"})
-	-- use({"windwp/nvim-autopairs"})
 	use({"tpope/vim-surround"})
 	use({"numToStr/Comment.nvim"})
 	use({"kyazdani42/nvim-web-devicons"})
@@ -89,19 +88,11 @@ return packer.startup(function(use)
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter")
     
-    -- Terminal
-    -- use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
-
     -- Vimwiki and related plugins
     use { "vimwiki/vimwiki" }
     use { "iaamp/vimwiki-screenshot" }
     use { "plasticboy/vim-markdown" }
-    -- use { "tools-life/taskwiki" }
-    -- use { "shiffu/taskwiki" }
     use { "junegunn/goyo.vim" }
-
-    -- F5 TCL Language support
-    -- use {'lewis6991/tree-sitter-tcl', run = 'make' }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
