@@ -52,9 +52,8 @@ return packer.startup(function(use)
 	use({"akinsho/bufferline.nvim", requires = 'nvim-tree/nvim-web-devicons'})
 	use({"moll/vim-bbye"})
 	use({"nvim-lualine/lualine.nvim"})
-	-- use({"lukas-reineke/indent-blankline.nvim"})
 	use({"goolord/alpha-nvim"})
-	use("folke/which-key.nvim")
+	-- use("folke/which-key.nvim")
     use("NvChad/nvim-colorizer.lua")
 
     -- Tmux Navigation intergration with nvim
@@ -89,10 +88,10 @@ return packer.startup(function(use)
 	use("nvim-treesitter/nvim-treesitter")
     
     -- Vimwiki and related plugins
-    use { "vimwiki/vimwiki" }
-    use { "iaamp/vimwiki-screenshot" }
-    use { "plasticboy/vim-markdown" }
-    use { "junegunn/goyo.vim" }
+    -- use { "vimwiki/vimwiki" }
+    -- use { "iaamp/vimwiki-screenshot" }
+    -- use { "plasticboy/vim-markdown" }
+    -- use { "junegunn/goyo.vim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
