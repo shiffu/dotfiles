@@ -18,8 +18,10 @@ vim.g.maplocalleader = " "
 -- Various Pluging keymaps
 keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<Leader>f", ":Telescope find_files<CR>", opts)
+keymap("n", "<Leader>b", ":Telescope buffers<CR>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<Leader>G", ":Telescope grep_string<CR>", opts)
+keymap("n", "<Leader>c", ":bd<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
