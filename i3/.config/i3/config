@@ -66,8 +66,8 @@ client.unfocused 	    $border-color2 		$bg-color2 	$text-color
 client.urgent 	 	    $border-color 		$bg-color 	$text-color
 
 # Gaps
-gaps inner 6px
-gaps outer 2px
+gaps inner 1px
+gaps outer 1px
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id rofi -show drun
