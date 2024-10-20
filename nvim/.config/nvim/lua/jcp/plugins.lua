@@ -60,8 +60,10 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- Colorschemes
-    -- use 'marko-cerovac/material.nvim'
-    use 'ellisonleao/gruvbox.nvim'
+    -- use 'ellisonleao/gruvbox.nvim'
+    -- use 'rebelot/kanagawa.nvim'
+    -- use 'rose-pine/neovim'
+    use("comfysage/evergarden")
 
 	-- Completion plugins
 	use({"hrsh7th/nvim-cmp"})

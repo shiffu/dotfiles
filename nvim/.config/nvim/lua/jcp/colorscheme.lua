@@ -1,97 +1,154 @@
 vim.o.background = "dark"
 
--- require('material').setup({
---
--- 	contrast = {
--- 		sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
--- 		floating_windows = true, -- Enable contrast for floating windows
--- 		line_numbers = true, -- Enable contrast background for line numbers
--- 		sign_column = false, -- Enable contrast background for the sign column
--- 		cursor_line = true, -- Enable darker background for the cursor line
--- 		non_current_windows = false, -- Enable darker background for non-current windows
--- 		popup_menu = false, -- Enable lighter background for the popup menu
--- 	},
---
--- 	italics = {
--- 		comments = false, -- Enable italic comments
--- 		keywords = false, -- Enable italic keywords
--- 		functions = false, -- Enable italic functions
--- 		strings = false, -- Enable italic strings
--- 		variables = false -- Enable italic variables
--- 	},
---
--- 	contrast_filetypes = { -- Specify which filetypes get the contrasted (darker) background
--- 		"terminal", -- Darker terminal background
--- 		"packer", -- Darker packer background
--- 		"qf" -- Darker qf list background
--- 	},
---
--- 	high_visibility = {
--- 		lighter = false, -- Enable higher contrast text for lighter style
--- 		darker = true -- Enable higher contrast text for darker style
--- 	},
---
--- 	disable = {
--- 		colored_cursor = false, -- Disable the colored cursor
--- 		borders = false, -- Disable borders between verticaly split windows
--- 		background = true, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
--- 		term_colors = false, -- Prevent the theme from setting terminal colors
--- 		eob_lines = false -- Hide the end-of-buffer lines
--- 	},
---
--- 	lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
---
--- 	async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
---
--- 	custom_highlights = {}, -- Overwrite highlights with your own
---
--- 	plugins = { -- Here, you can disable(set to false) plugins that you don't use or don't want to apply the theme to
--- 		trouble = false,
--- 		nvim_cmp = true,
--- 		neogit = false,
--- 		gitsigns = true,
--- 		git_gutter = false,
--- 		telescope = true,
--- 		nvim_tree = true,
--- 		sidebar_nvim = false,
--- 		lsp_saga = false,
--- 		nvim_dap = false,
--- 		nvim_navic = false,
--- 		which_key = true,
--- 		sneak = false,
--- 		hop = false,
--- 		indent_blankline = true,
--- 		nvim_illuminate = true,
--- 		mini = false,
--- 	}
+-- require("gruvbox").setup({
+--   terminal_colors = true, -- add neovim terminal colors
+--   undercurl = true,
+--   underline = true,
+--   bold = true,
+--   italic = {
+--     strings = true,
+--     emphasis = true,
+--     comments = true,
+--     operators = false,
+--     folds = true,
+--   },
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--   inverse = true, -- invert background for search, diffs, statuslines and errors
+--   contrast = "", -- can be "hard", "soft" or empty string
+--   palette_overrides = {},
+--   overrides = {},
+--   dim_inactive = false,
+--   transparent_mode = false,
 -- })
 
--- vim.g.material_style = "darker"
--- vim.cmd 'colorscheme material'
 
-require("gruvbox").setup({
-  terminal_colors = true, -- add neovim terminal colors
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = {
-    strings = true,
-    emphasis = true,
-    comments = true,
-    operators = false,
-    folds = true,
+-- require('kanagawa').setup({
+--     compile = false,             -- enable compiling the colorscheme
+--     undercurl = true,            -- enable undercurls
+--     commentStyle = { italic = true },
+--     functionStyle = {},
+--     keywordStyle = { italic = true},
+--     statementStyle = { bold = true },
+--     typeStyle = {},
+--     transparent = false,         -- do not set background color
+--     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+--     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+--     colors = {                   -- add/modify theme and palette colors
+--         palette = {},
+--         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+--     },
+--     overrides = function(colors) -- add/modify highlights
+--         return {}
+--     end,
+--     theme = "wave",              -- Load "wave" theme when 'background' option is not set
+--     background = {               -- map the value of 'background' option to a theme
+--         dark = "wave",           -- try "dragon" !
+--         light = "lotus"
+--     },
+-- })
+
+
+-- require("rose-pine").setup({
+--     variant = "auto", -- auto, main, moon, or dawn
+--     dark_variant = "main", -- main, moon, or dawn
+--     dim_inactive_windows = false,
+--     extend_background_behind_borders = true,
+--
+--     enable = {
+--         terminal = true,
+--         legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+--         migrations = true, -- Handle deprecated options automatically
+--     },
+--
+--     styles = {
+--         bold = true,
+--         italic = true,
+--         transparency = false,
+--     },
+--
+--     groups = {
+--         border = "muted",
+--         link = "iris",
+--         panel = "surface",
+--
+--         error = "love",
+--         hint = "iris",
+--         info = "foam",
+--         note = "pine",
+--         todo = "rose",
+--         warn = "gold",
+--
+--         git_add = "foam",
+--         git_change = "rose",
+--         git_delete = "love",
+--         git_dirty = "rose",
+--         git_ignore = "muted",
+--         git_merge = "iris",
+--         git_rename = "pine",
+--         git_stage = "iris",
+--         git_text = "rose",
+--         git_untracked = "subtle",
+--
+--         h1 = "iris",
+--         h2 = "foam",
+--         h3 = "rose",
+--         h4 = "gold",
+--         h5 = "pine",
+--         h6 = "foam",
+--     },
+--
+--     palette = {
+--         -- Override the builtin palette per variant
+--         -- moon = {
+--         --     base = '#18191a',
+--         --     overlay = '#363738',
+--         -- },
+--     },
+--
+--     highlight_groups = {
+--         -- Comment = { fg = "foam" },
+--         -- VertSplit = { fg = "muted", bg = "muted" },
+--     },
+--
+--     before_highlight = function(group, highlight, palette)
+--         -- Disable all undercurls
+--         -- if highlight.undercurl then
+--         --     highlight.undercurl = false
+--         -- end
+--         --
+--         -- Change palette colour
+--         -- if highlight.fg == palette.pine then
+--         --     highlight.fg = palette.foam
+--         -- end
+--     end,
+-- })
+
+
+require 'evergarden'.setup {
+  transparent_background = false,
+  contrast_dark = 'medium', -- 'hard'|'medium'|'soft'
+  override_terminal = true,
+  style = {
+    tabline = { reverse = true, color = 'green' },
+    search = { reverse = false, inc_reverse = true },
+    types = { italic = true },
+    keyword = { italic = true },
+    comment = { italic = false },
+    sign = { highlight = false },
   },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = false,
-})
-vim.cmd("colorscheme gruvbox")
+  overrides = { }, -- add custom overrides
+}
+
+
+-- vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme rose-pine")
+-- vim.cmd("colorscheme rose-pine-main")
+-- vim.cmd("colorscheme rose-pine-moon")
+-- vim.cmd("colorscheme rose-pine-dawn")-- setup must be called before loading
+vim.cmd("colorscheme evergarden")
 
