@@ -72,8 +72,9 @@ return packer.startup(function(use)
 	use({"hrsh7th/cmp-nvim-lsp"})
 	use({"hrsh7th/cmp-nvim-lua"})
 
-    -- GitSigns
+    -- Git Integration
     use("lewis6991/gitsigns.nvim")
+    use("NeogitOrg/neogit")
 
     -- Mason
     use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
