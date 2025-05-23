@@ -19,6 +19,11 @@ config.color_scheme = 'Everforest Dark - Hard'
 config.term = 'xterm-256color'
 -- config.term = 'wezterm'
 
+-- Windows specific config
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe' }
+end
+
 -- Window
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
