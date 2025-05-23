@@ -15,24 +15,47 @@ local config = wezterm.config_builder()
 -- config.color_scheme = 'Catppuccin Mocha'
 config.color_scheme = 'Everforest Dark - Hard'
 
--- Term
-config.term = 'xterm-256color'
--- config.term = 'wezterm'
+config.line_height = 1.1
 
--- Windows specific config
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe' }
-end
+-- Tab Bar
+config.use_fancy_tab_bar = true
+config.tab_bar_at_bottom = true
+config.tab_max_width = 32
 
--- Window
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 20
-config.window_decorations = "RESIZE"
+-- Values taken from the theme (should do something more dynamic)
+local bg = '#6a7478'
+local fg = '#d3c6aa'
+local bg_active = '#dbbc7f'
+local fg_active = '#1e2326'
 
--- Font
-config.font = wezterm.font('Hack Nerd Font Mono', { weight = 'Regular' })
-config.font_size = 11
+config.colors = {
+  tab_bar = {
+    background = bg,
+    active_tab = {
+      bg_color = bg_active,
+      fg_color = fg_active,
+      intensity = 'Normal',
+      underline = 'None',
+      italic = true,
+      strikethrough = false,
+    },
+    inactive_tab = {
+      bg_color = bg,
+      fg_color = fg,
+      intensity = 'Normal',
+      underline = 'None',
+      italic = false,
+      strikethrough = false,
+    },
+    new_tab_hover = {
+      bg_color = bg_active,
+      fg_color = fg_active,
+      italic = true,
+    },
+  },
+}
 
+-- Dynamic Power line
 local function segments_for_right_status(window)
   return {
     wezterm.strftime('%a %b %-d %H:%M'),
@@ -44,7 +67,6 @@ wezterm.on('update-status', function(window, _)
   local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
   local segments = segments_for_right_status(window)
 
-  local color_scheme = window:effective_config().resolved_palette
   -- Note the use of wezterm.color.parse here, this returns
   -- a Color object, which comes with functionality for lightening
   -- or darkening the colour (amongst other things).
@@ -56,9 +78,9 @@ wezterm.on('update-status', function(window, _)
   -- scheme. Let's establish the "from" and "to" bounds of our gradient.
   local gradient_to, gradient_from = bg
   if appearance.is_dark() then
-    gradient_from = gradient_to:lighten(0.2)
+    gradient_from = gradient_to:lighten(0.4)
   else
-    gradient_from = gradient_to:darken(0.2)
+    gradient_from = gradient_to:darken(0.4)
   end
 
   -- Yes, WezTerm supports creating gradients, because why not?! Although
@@ -92,6 +114,48 @@ wezterm.on('update-status', function(window, _)
 
   window:set_right_status(wezterm.format(elements))
 end)
+
+-- Term
+config.term = 'xterm-256color'
+-- config.term = 'wezterm'
+
+-- Windows specific config
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe' }
+    config.win32_system_backdrop = 'Acrylic' -- could use 'Mica' too
+end
+
+-- Window
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 20
+config.window_decorations = "RESIZE"
+
+-- Font
+config.font = wezterm.font('Hack Nerd Font Mono', { weight = 'Regular' })
+config.font_size = 11
+
+-- Keybinds
+config.keys = {
+  -- Turn off the default CMD-m Hide action, allowing CMD-m to
+  -- be potentially recognized and handled by the tab
+  {
+    key = 'm',
+    mods = 'CMD',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  -- Vertical Pane split
+  {
+    key = '\\',
+    mods = 'SUPER',
+    action = wezterm.action.SplitHorizontal,
+  },
+  -- Horizontal Pane split
+  {
+    key = '-',
+    mods = 'SUPER',
+    action = wezterm.action.SplitVertical,
+  },
+}
 
 -- Return the configuration
 return config
