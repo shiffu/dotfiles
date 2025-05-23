@@ -8,9 +8,6 @@ alias ls='ls --color'
 alias ll='ls -l'
 alias la='ls -al'
 
-alias ssha='~/utils/ssha.sh $@'
-alias sshb='~/utils/sshb.sh $@'
-
 alias os='openstack --insecure'
 
 # Kube aliases

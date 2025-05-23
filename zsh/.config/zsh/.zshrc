@@ -34,6 +34,9 @@ zsh_source_file "zsh-aliases"
 zsh_source_file "zsh-prompt"
 zsh_source_file "zsh-vim-mode"
 
+# Extra local aliases
+[ -f ~/.zsh-aliases ] && source ~/.zsh-aliases
+
 # Plugins
 zsh_import_plugin "zsh-users/zsh-autosuggestions"
 zsh_import_plugin "zsh-users/zsh-syntax-highlighting"
