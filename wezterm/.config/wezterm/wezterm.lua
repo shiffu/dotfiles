@@ -123,10 +123,12 @@ config.term = 'xterm-256color'
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe' }
     config.win32_system_backdrop = 'Acrylic' -- could use 'Mica' too
+    config.window_background_opacity = 0.8
+else
+    config.window_background_opacity = 0.9
 end
 
 -- Window
-config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 config.window_decorations = "RESIZE"
 
