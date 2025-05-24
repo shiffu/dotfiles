@@ -4,9 +4,19 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 alias vi='vim'
 alias v='nvim'
 
-alias ls='ls --color'
-alias ll='ls -l'
-alias la='ls -al'
+if command -v eza 2>&1 > /dev/null
+then
+    alias ls='eza'
+    alias ls='ls --color'
+    alias ll='eza -l'
+    alias la='eza -al'
+    alias lt='eza -T'
+    alias lt2='eza -T -L 2'
+else
+    alias ls='ls --color'
+    alias ll='ls -l'
+    alias la='ls -al'
+fi
 
 alias os='openstack --insecure'
 
