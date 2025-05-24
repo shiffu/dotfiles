@@ -44,8 +44,11 @@ zsh_import_plugin "hlissner/zsh-autopair"
 
 compinit
 
-# kubectl autocomple
-source <(kubectl completion zsh)
+# kubectl autocomplete
+if command -v kubectl 2>&1 /dev/null
+then
+    source (kubectl completion zsh)
+fi
 
 # Key-bindings
 bindkey "^p" up-line-or-beginning-search # Up
