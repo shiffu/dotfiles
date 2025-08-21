@@ -53,7 +53,6 @@ return packer.startup(function(use)
 	use({"moll/vim-bbye"})
 	use({"nvim-lualine/lualine.nvim"})
 	use({"goolord/alpha-nvim"})
-	-- use("folke/which-key.nvim")
     use("NvChad/nvim-colorizer.lua")
 
     -- Tmux Navigation intergration with nvim
@@ -61,9 +60,10 @@ return packer.startup(function(use)
 
 	-- Colorschemes
     -- use 'ellisonleao/gruvbox.nvim'
+    use {"catppuccin/nvim", as = "catppuccin"}
     -- use 'rebelot/kanagawa.nvim'
     -- use 'rose-pine/neovim'
-    use("comfysage/evergarden")
+    -- use("comfysage/evergarden")
 
 	-- Completion plugins
 	use({"hrsh7th/nvim-cmp"})
@@ -79,23 +79,12 @@ return packer.startup(function(use)
     -- Mason
     use {"williamboman/mason.nvim", run = ":MasonUpdate"}   -- :MasonUpdate updates registry contents
 
-	-- LSP
-	use({"neovim/nvim-lspconfig"})
-	use({"williamboman/nvim-lsp-installer"})
-	use({"jose-elias-alvarez/null-ls.nvim"})
-
 	-- Telescope
 	use({"nvim-telescope/telescope.nvim"})
 
 	-- Treesitter
 	use("nvim-treesitter/nvim-treesitter")
     
-    -- Vimwiki and related plugins
-    -- use { "vimwiki/vimwiki" }
-    -- use { "iaamp/vimwiki-screenshot" }
-    -- use { "plasticboy/vim-markdown" }
-    -- use { "junegunn/goyo.vim" }
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

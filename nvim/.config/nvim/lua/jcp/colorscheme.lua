@@ -128,21 +128,72 @@ vim.o.background = "dark"
 -- })
 
 
-require 'evergarden'.setup {
-  transparent_background = false,
-  contrast_dark = 'medium', -- 'hard'|'medium'|'soft'
-  override_terminal = true,
-  style = {
-    tabline = { reverse = true, color = 'green' },
-    search = { reverse = false, inc_reverse = true },
-    types = { italic = true },
-    keyword = { italic = true },
-    comment = { italic = false },
-    sign = { highlight = false },
-  },
-  overrides = { }, -- add custom overrides
-}
+-- require 'evergarden'.setup {
+--   transparent_background = false,
+--   contrast_dark = 'medium', -- 'hard'|'medium'|'soft'
+--   override_terminal = true,
+--   style = {
+--     tabline = { reverse = true, color = 'green' },
+--     search = { reverse = false, inc_reverse = true },
+--     types = { italic = true },
+--     keyword = { italic = true },
+--     comment = { italic = false },
+--     sign = { highlight = false },
+--   },
+--   overrides = { }, -- add custom overrides
+-- }
 
+require("catppuccin").setup({
+    flavour = "auto", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = false, -- disables setting the background color.
+    show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+    term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+    dim_inactive = {
+        enabled = true, -- dims the background color of inactive window
+        shade = "dark",
+        percentage = 0.2, -- percentage of the shade to apply to the inactive window
+    },
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
+    no_underline = false, -- Force no underline
+    styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+        comments = { "italic" }, -- Change the style of comments
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+        -- miscs = {}, -- Uncomment to turn off hard-coded styles
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    default_integrations = true,
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        notify = false,
+        mini = {
+            enabled = true,
+            indentscope_color = "",
+        },
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
+})
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
 
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme kanagawa")
@@ -150,5 +201,6 @@ require 'evergarden'.setup {
 -- vim.cmd("colorscheme rose-pine-main")
 -- vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme rose-pine-dawn")-- setup must be called before loading
-vim.cmd("colorscheme evergarden")
+-- vim.cmd("colorscheme evergarden")
+vim.cmd("colorscheme catppuccin")
 
