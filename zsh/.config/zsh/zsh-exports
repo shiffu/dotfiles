@@ -16,7 +16,6 @@ export TASKRC="~/.config/task/taskrc"
 
 export PATH="/usr/local/go/bin":$PATH
 export PATH="$HOME/.local/bin":$PATH
-export PATH="$HOME/go/bin":$PATH
 export PATH="$HOME/.pyenv/shims:${PATH}"
 
 # OS Specific Exports
@@ -35,7 +34,14 @@ Linux)
 
 CYGWIN* | MINGW32* | MSYS* | MINGW*)
 	# echo 'MS Windows'
-	;;
+    export PATH="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin:$PATH"
+    export PATH="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64:$PATH"
+    export PATH="/c/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja:$PATH"
+
+    export LIB="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/lib/x64:$LIB"
+    export LIBPATH=$LIB
+    ;;
+
 *)
 	# echo 'Other OS'
 	;;
