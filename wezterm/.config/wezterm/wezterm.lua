@@ -1,19 +1,20 @@
 local appearance = require 'appearance'
-
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- config.clean_exit_codes = { 1 }
+-- config.exit_behavior = 'Hold'
+
 -- Appearance
 -- config.color_scheme = 'Arthur'
--- config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Catppuccin Mocha'
 -- config.color_scheme = 'Dracula'
 -- config.color_scheme = 'hardhacker'
 -- config.color_scheme = 'Tokyo Night Storm'
 -- config.color_scheme = 'Catppuccin Mocha'
-config.color_scheme = 'Everforest Dark - Hard'
+-- config.color_scheme = 'Everforest Dark - Hard'
 
 config.line_height = 1.1
 
@@ -117,13 +118,17 @@ end)
 
 -- Term
 config.term = 'xterm-256color'
+-- The following Term doesn't work properly on Windows
 -- config.term = 'wezterm'
 
 -- Windows specific config
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe' }
-    config.win32_system_backdrop = 'Acrylic' -- could use 'Mica' too
-    config.window_background_opacity = 0.8
+    -- config.default_prog = { 'C:\\Program Files\\Git\\bin\\bash.exe' }
+    config.default_prog = { 'C:\\Users\\jcpennel\\synology\\dev\\cpp\\my_game\\setup_msvc_env.bat' }
+
+    -- config.win32_system_backdrop = 'Acrylic'
+    -- config.win32_system_backdrop = 'Mica'
+    config.window_background_opacity = 0.75
 else
     config.window_background_opacity = 0.9
 end
@@ -133,7 +138,8 @@ config.macos_window_background_blur = 20
 config.window_decorations = "RESIZE"
 
 -- Font
-config.font = wezterm.font('Hack Nerd Font Mono', { weight = 'Regular' })
+-- config.font = wezterm.font('Hack Nerd Font', { weight = 'Regular' })
+config.font = wezterm.font('JetBrains Mono', { weight = 'Regular' })
 config.font_size = 11
 
 -- Keybinds
