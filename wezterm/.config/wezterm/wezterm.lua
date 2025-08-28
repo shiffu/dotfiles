@@ -29,6 +29,20 @@ local fg = '#d3c6aa'
 local bg_active = '#dbbc7f'
 local fg_active = '#1e2326'
 
+window_decorations = "TITLE | RESIZE"
+config.enable_scroll_bar = true
+
+config.window_frame = {
+  border_left_width = '0.5cell',
+  border_right_width = '0.5cell',
+  border_bottom_height = '0.25cell',
+  border_top_height = '0.25cell',
+  border_left_color = 'purple',
+  border_right_color = 'purple',
+  border_bottom_color = 'purple',
+  border_top_color = 'purple',
+}
+
 config.colors = {
   tab_bar = {
     background = bg,
