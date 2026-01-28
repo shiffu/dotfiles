@@ -1,4 +1,3 @@
--- Options
 local options = {
 
   -- Basic settings
@@ -7,8 +6,8 @@ local options = {
   numberwidth = 4,                         -- set number column width to 4 {default 4}
   scrolloff = 4,                           -- keep 5 lines of buffer on top/bottom while scrolling
   sidescrolloff = 8,
-  cmdheight = 1,                           -- space in the neovim command line for displaying messages
-  -- showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  cmdheight = 0,                           -- space in the neovim command line for displaying messages
+  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
 
   -- Indentation
   tabstop = 4,                             -- insert 4 spaces for a tab
@@ -33,6 +32,8 @@ local options = {
   pumheight = 10,                          -- pop up menu height
   conceallevel = 0,                        -- so that `` is visible in markdown files
   wrap = true,                             -- wrap lines ?
+  list = true,                             -- show trailing "spaces" characters
+  listchars = {tab='» ', trail='.', nbsp='␣'},
 
   -- Completion
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -61,95 +62,11 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-
--- Autocommands
-vim.cmd [[
-  augroup _general_settings
-    autocmd!
-    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
-    autocmd BufWinEnter * :set formatoptions-=cro
-    autocmd FileType qf set nobuflisted
-  augroup end
-
-  augroup _git
-    autocmd!
-    autocmd FileType gitcommit setlocal wrap
-    autocmd FileType gitcommit setlocal spell
-  augroup end
-
-  augroup _markdown
-    autocmd!
-    autocmd FileType markdown setlocal wrap
-    autocmd FileType markdown setlocal spell
-  augroup end
-
-  augroup _auto_resize
-    autocmd!
-    autocmd VimResized * tabdo wincmd =
-  augroup end
-
-  augroup _alpha
-    autocmd!
-    autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
-  augroup end
-
-  augroup _fold
-    autocmd!
-    autocmd BufReadPost,FileReadPost * normal zR
-  augroup end
-]]
-
--- Keymaps
-local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
-local keymap = vim.api.nvim_set_keymap
-
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
--- Various Pluging keymaps
-keymap("n", "<Leader>e", ":Vex<CR>", opts)
-keymap("n", "<Leader>c", ":bd<CR>", opts)
-
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
--- Split & Resize Panes
-keymap("n", "<Leader>v", ":vsplit<CR>", opts)
-keymap("n", "<Leader>s", ":split<CR>", opts)
-keymap("n", "<A-j>", ":resize -3<CR>", opts)
-keymap("n", "<A-k>", ":resize +3<CR>", opts)
-keymap("n", "<A-h>", ":vertical resize -3<CR>", opts)
-keymap("n", "<A-l>", ":vertical resize +3<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<C-Right>", ":bnext<CR>", opts)
-keymap("n", "<C-Left>", ":bprevious<CR>", opts)
-keymap("n", "<Leader><S-c>", ":%bd|e#<CR>", opts)
-
--- Paste without overriding the current buffer
-keymap("v", "p", '"_dP', opts)
-
--- Press jk fast to exit insert mode
-keymap("i", "jk", "<ESC>", opts)
-
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
--- Quick edit the nvim config
-keymap("n", "<Leader>rc", ":e ~/.config/nvim/init.lua<CR>", opts)
-
--- Colorscheme
--- vim.cmd.colorscheme "default"
-vim.cmd.colorscheme "habamax"
--- vim.cmd.colorscheme "unokai"
-
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("YankHighlight", {clear=true}),
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+    desc = "Highlight Yank",
+})
