@@ -74,3 +74,5 @@ export EDITOR="nvim"
 
 [ -f ~/.local/bin/kube-ps1.sh ] && source ~/.local/bin/kube-ps1.sh && PROMPT='$(kube_ps1)'$PROMPT
 
+autoload -U compinit && compinit
+fpath+=(~/.config/zsh/completions $fpath)

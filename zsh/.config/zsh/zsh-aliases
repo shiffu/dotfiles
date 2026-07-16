@@ -20,6 +20,10 @@ fi
 
 alias os='openstack --insecure'
 
+# Multiple Java Homes aliases
+alias jdk21='export JAVA_HOME=$(/usr/libexec/java_home -v 21)'
+alias jdk25='export JAVA_HOME=$(/usr/libexec/java_home -v 25)'
+
 # Kube aliases
 alias k='kubectl'
 alias kc='kubectx'
